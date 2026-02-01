@@ -1,0 +1,35 @@
+installation:
+  version: 6.0.0-Beta.4
+  installDate: 2026-01-30T20:11:49.003Z
+  lastUpdated: 2026-01-30T20:11:49.003Z
+modules:
+  - name: core
+    version: 6.0.0-Beta.4
+    installDate: 2026-01-30T20:11:43.948Z
+    lastUpdated: 2026-01-30T20:11:43.948Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmm
+    version: 6.0.0-Beta.4
+    installDate: 2026-01-30T20:10:40.961Z
+    lastUpdated: 2026-01-30T20:11:43.949Z
+    source: built-in
+    npmPackage: null
+    repoUrl: null
+  - name: bmb
+    version: 0.1.3
+    installDate: 2026-01-30T20:11:15.999Z
+    lastUpdated: 2026-01-30T20:11:46.517Z
+    source: external
+    npmPackage: bmad-builder
+    repoUrl: https://github.com/bmad-code-org/bmad-builder
+  - name: cis
+    version: 0.1.3
+    installDate: 2026-01-30T20:11:43.767Z
+    lastUpdated: 2026-01-30T20:11:49.003Z
+    source: external
+    npmPackage: bmad-creative-intelligence-suite
+    repoUrl: https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite
+ides:
+  - antigravity
