@@ -97,7 +97,7 @@ Admins can monitor activity and support users with technical issues.
 
 Users can securely sign up, log in, manage their profile and data privacy.
 
-### Story 1.1: Initialize Turborepo & Core Project Structure
+### Story 1.1: Initialize Turborepo & Core Project Structure [x]
 
 As a developer,
 I want to set up the foundational monorepo workspace with NestJS and Next.js,

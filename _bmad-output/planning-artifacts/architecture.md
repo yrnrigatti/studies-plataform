@@ -203,16 +203,27 @@ npx create-turbo@latest . --package-manager pnpm --design-system
 - **Naming:** `isLoading`, `isSubmitting`.
 - **UI:** Skeleton loaders for content, Spinners for actions.
 
+**Testing Patterns:**
+- **Coverage:** 100% test coverage required across all components and modules.
+- **Backend Tests:** Unit tests (`*.spec.ts`) co-located with source files, E2E tests in `apps/api/test/`.
+- **Frontend Tests:** Component tests (`*.test.tsx`) co-located with source files, E2E tests using Playwright/Cypress.
+- **Shared Packages:** Unit tests for all exported functions and components.
+- **Test Structure:** AAA pattern (Arrange, Act, Assert) for consistency.
+- **Mocking:** Jest mocks for external dependencies (DB, APIs), Mock Service Worker for API E2E tests.
+
 ### Enforcement Guidelines
 
 **All AI Agents MUST:**
 - Use **kebab-case** for ALL file names.
 - Use **camelCase** for JSON properties (API).
 - Isolate DB access to `packages/database` or specific NestJS modules.
+- **Write tests for ALL code:** Every feature, component, service, and utility must have corresponding tests.
+- **Achieve 100% test coverage:** All implementation stories must include tests that maintain full coverage.
 
 **Pattern Enforcement:**
 - Verified via ESLint and strict TSConfig.
 - Pattern violations documented in PR reviews.
+- Test coverage enforced via Jest/Vitest coverage reports (minimum 100%).
 
 ### Pattern Examples
 
@@ -394,6 +405,8 @@ Naming and communication patterns are defined.
 - Use implementation patterns consistently across all components
 - Respect project structure and boundaries
 - Refer to this document for all architectural questions
+- **Write comprehensive tests:** Every implementation must include unit tests and relevant integration/E2E tests
+- **Maintain 100% test coverage:** No code should be merged without corresponding tests
 
 **First Implementation Priority:**
 Initialize the Turborepo workspace.
