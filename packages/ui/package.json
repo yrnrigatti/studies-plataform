@@ -5,18 +5,36 @@
     "license": "MIT",
     "exports": {
         "./button": "./src/button.tsx",
-        "./card": "./src/card.tsx"
+        "./card": "./src/card.tsx",
+        "./input": "./src/input.tsx",
+        "./label": "./src/label.tsx",
+        "./form": "./src/form.tsx",
+        "./toast": "./src/toast.tsx",
+        "./use-toast": "./src/use-toast.tsx",
+        "./toaster": "./src/toaster.tsx",
+        "./lib/utils": "./src/lib/utils.ts"
     },
     "scripts": {
         "lint": "eslint . --max-warnings 0",
         "type-check": "tsc --noEmit"
     },
     "peerDependencies": {
-        "react": "^18.2.0"
+        "react": "^18.2.0 || ^19.0.0"
     },
     "devDependencies": {
         "@repo/typescript-config": "workspace:*",
         "@types/react": "^18.2.61",
         "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "@radix-ui/react-label": "^2.1.8",
+        "@radix-ui/react-slot": "^1.2.4",
+        "@radix-ui/react-toast": "^1.2.15",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "lucide-react": "^0.563.0",
+        "react-hook-form": "^7.54.2",
+        "tailwind-merge": "^3.4.0",
+        "zod": "^3.24.1"
     }
 }
