@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Loader2 } from 'lucide-react';
-import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@repo/ui/button';
@@ -23,16 +22,13 @@ import { useToast } from '@repo/ui/use-toast';
 
 import { registerSchema, type RegisterFormValues } from '@/lib/schemas/auth';
 
-// Initialize Supabase client outside component to avoid recreation on render
-const supabase = createSupabaseClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { createClient } from "@/lib/supabase/client"
 
 export function RegisterForm() {
     const router = useRouter();
     const { toast } = useToast();
     const [isLoading, setIsLoading] = useState(false);
+    const supabase = createClient();
 
     const form = useForm<RegisterFormValues>({
         resolver: zodResolver(registerSchema),
@@ -69,7 +65,7 @@ export function RegisterForm() {
                 description: 'Account created successfully. Redirecting...',
             });
 
-            router.push('/library'); // Redirect to library/dashboard after signup
+            router.push('/dashboard'); // Redirect to dashboard after signup
         } catch (error) {
             toast({
                 variant: 'destructive',
